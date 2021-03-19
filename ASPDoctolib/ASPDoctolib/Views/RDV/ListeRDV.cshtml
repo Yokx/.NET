@@ -1,0 +1,48 @@
+﻿@model List<RDV>
+@{
+    ViewData["Title"] = "Prise de Rendez-vous";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Prendre Rendez-vous!</h1>
+    <p>blablabla</p>
+</div>
+
+@*<h1>Liste des Rendez-vous</h1>
+<div class="row">
+    <div class="col">
+        Numéro RDV
+    </div>
+    <div class="col">
+        Date RDV
+    </div>
+    <div class="col">
+        Heure RDV
+    </div>
+    <div class="col">
+        Code du Médecin
+    </div>
+    <div class="col">
+        Code du Patient
+    </div>
+</div>
+@foreach (RDV r in Model)
+{
+    <div class="row">
+        <div class="col">
+            @r.NumeroRDV
+        </div>
+        <div class="col">
+            @r.DateRDV
+        </div>
+        <div class="col">
+            @r.HeureRDV
+        </div>
+        <div class="col">
+            @r.CodeMedecin
+        </div>
+        <div class="col">
+            @r.CodePatient
+        </div>
+    </div>
+}*@

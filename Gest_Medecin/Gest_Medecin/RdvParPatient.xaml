@@ -1,0 +1,54 @@
+﻿<Window x:Class="Gest_Medecin.RdvParPatient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gest_Medecin"
+        mc:Ignorable="d"
+        Title="RdvParPatient" Height="650" Width="800" Loaded="OnLoad">
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Height="61" Margin="25,10,0,0" VerticalAlignment="Top" Width="736" Background="#FFF7C283"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="20" Margin="198,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97"/>
+        <Label Content="Code Patient" HorizontalAlignment="Left" Height="25" Margin="114,25,0,0" VerticalAlignment="Top" Width="79"/>
+        <Button x:Name="buttonOK" Content="Ok" HorizontalAlignment="Left" Height="26" Margin="315,25,0,0" VerticalAlignment="Top" Width="70" Background="#FF64A8EC" Foreground="White" FontWeight="Bold" Click="buttonOK_Click"/>
+        <Button x:Name="buttonAnnuler" Content="Annuler" HorizontalAlignment="Left" Height="26" Margin="390,25,0,0" VerticalAlignment="Top" Width="70" Foreground="#FF060605" Background="#FFF97123" Click="buttonAnnuler_Click"/>
+        <StackPanel HorizontalAlignment="Left" Height="72" Margin="25,76,0,0" VerticalAlignment="Top" Width="736" Background="#FF93C4E0"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="99,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109"/>
+        <Label Content="Nom" HorizontalAlignment="Left" Height="25" Margin="44,83,0,0" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="99,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109"/>
+        <Label Content="Date Naiss" HorizontalAlignment="Left" Height="25" Margin="25,108,0,0" VerticalAlignment="Top" Width="97"/>
+        <RichTextBox x:Name="richTextBox1" HorizontalAlignment="Left" Height="27" Margin="473,85,0,0" VerticalAlignment="Top" Width="266">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="RichTextBox"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Label Content="Adresse" HorizontalAlignment="Left" Height="25" Margin="411,85,0,0" VerticalAlignment="Top" Width="62"/>
+        <StackPanel HorizontalAlignment="Left" Height="35" Margin="473,113,0,0" VerticalAlignment="Top" Width="266"/>
+        <RadioButton x:Name="radioButton1" Content="H" HorizontalAlignment="Left" Margin="473,124,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radioButton2" Content="F" HorizontalAlignment="Left" Margin="516,124,0,0" VerticalAlignment="Top"/>
+        <Label Content="Sexe" HorizontalAlignment="Left" Height="24" Margin="419,118,0,0" VerticalAlignment="Top" Width="41"/>
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="239" Margin="25,153,0,0" VerticalAlignment="Top" Width="736" SelectionChanged="Grid1_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Numero RDV" Binding="{Binding Path=NumeroRDV}"/>
+                <DataGridTextColumn Header="Date Rendez-Vous" Binding="{ Binding Path=DateRDV ,StringFormat='dd-MM-yyyy'}"/>
+                <DataGridTextColumn Header="Heure Rendez-Vous" Binding="{Binding Path=HeureRDV}"/>
+                <DataGridTextColumn Header="Code Médecin" Binding="{Binding Path=CodeMedecin}" />
+                <DataGridTextColumn Header="Code Patient" Binding="{Binding Path=CodePatient}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel HorizontalAlignment="Left" Height="138" Margin="25,397,0,0" VerticalAlignment="Top" Width="736" Background="#FFCAE3EA"/>
+        <TextBox x:Name="txtBoxHeureRDV" HorizontalAlignment="Left" Height="23" Margin="344,417,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
+        <Label Content="Heure RDV" HorizontalAlignment="Left" Height="28" Margin="266,417,0,0" VerticalAlignment="Top" Width="73" RenderTransformOrigin="0.516,0.643"/>
+        <Label Content="Date RDV " HorizontalAlignment="Left" Height="28" Margin="21,478,0,0" VerticalAlignment="Top" Width="73" RenderTransformOrigin="0.516,0.643"/>
+        <DatePicker x:Name="dateTimePicker1" HorizontalAlignment="Left" Height="27" Margin="99,479,0,0" VerticalAlignment="Top" Width="142"/>
+        <Label Content="Code Medecin" HorizontalAlignment="Left" Height="28" Margin="266,478,0,0" VerticalAlignment="Top" Width="95" RenderTransformOrigin="0.516,0.643"/>
+        <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Height="27" Margin="353,479,0,0" VerticalAlignment="Top" Width="107"/>
+        <Button x:Name="buttonEnregistrer" Content="Enregistrer" HorizontalAlignment="Left" Height="28" Margin="541,417,0,0" VerticalAlignment="Top" Width="125" Background="#FFDEA746" Click="buttonEnregistrer_Click"/>
+        <Button x:Name="buttonSupprimer" Content="Supprimer" HorizontalAlignment="Left" Height="28" Margin="541,460,0,0" VerticalAlignment="Top" Width="125" Background="#FF419DEA" Foreground="#FFFBF7F7" Click="buttonSupprimer_Click"/>
+        <TextBox x:Name="txtBoxNumRDV" IsReadOnly="True" HorizontalAlignment="Left" Height="24" Margin="99,417,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109"/>
+        <Label Content="Num RDV" HorizontalAlignment="Left" Height="30" Margin="25,415,0,0" VerticalAlignment="Top" Width="76"/>
+
+    </Grid>
+</Window>

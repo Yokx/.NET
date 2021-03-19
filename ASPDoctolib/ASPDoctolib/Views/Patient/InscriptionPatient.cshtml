@@ -1,0 +1,68 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<form asp-action="SubmitFormPatient" asp-controller="Patient" method="post" class="container">
+    @if (ViewBag.MessageError != null)
+    {
+        <div class="row m-1">
+            <div class="alert-danger col p-1">
+                @ViewBag.MessageError
+            </div>
+        </div>
+    }
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input type="email" class="form-control" name="inputEmail4" id="inputEmail4" placeholder="Email">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputPassword4">Mot de passe</label>
+            <input type="password" class="form-control" name="inputPassword4" id="inputPassword4" placeholder="Password">
+        </div>
+    </div>
+    <fieldset class="form-group">
+        <div class="form-group col-md-6">
+            <label for="inputName">Nom</label>
+            <input type="text" class="form-control" name="inputName" id="inputName" placeholder="Nom...">
+        </div>
+        <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Sexe</legend>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios1" value="homme" checked>
+                    <label class="form-check-label" for="gridRadios1">
+                        Homme
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios2" value="femme">
+                    <label class="form-check-label" for="gridRadios2">
+                        Femme
+                    </label>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <div class="form-group">
+        <label for="inputAddress">Address</label>
+        <input type="text" class="form-control" name="inputAddress" id="inputAddress" placeholder="10 rue du...">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputTel">Téléphone Portable</label>
+            <input type="text" class="form-control" name="inputTel" id="inputTel">
+        </div>
+        <div class="input-group date" data-provide="datepicker">
+            <label for="start">Date de Naissance :</label>
+
+            <input type="date" id="start" name="dateNaissance"
+                   value="2018-07-22"
+                   min="1950-01-01" max="2022-12-31">
+        </div>
+
+    </div>
+
+    <button class="btn btn-primary">S'inscrire</button>
+</form>

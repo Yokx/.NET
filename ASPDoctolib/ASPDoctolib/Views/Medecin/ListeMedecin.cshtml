@@ -1,0 +1,44 @@
+﻿@model List<Medecin>
+@{
+    ViewData["Title"] = "Liste des médecins";
+}
+
+
+ 
+    
+
+<h1>Liste des Medecins</h1>
+<div class="row">
+    <div class="col">
+        Code Médecin
+    </div>
+    <div class="col">
+        Nom du Médecin
+    </div>
+    <div class="col">
+        Tel du Médecin
+    </div>
+    <div class="col">
+        Specialite Médecin
+    </div>
+   
+</div>
+
+@foreach (Medecin m in Model)
+{
+    <div class="row">
+        <div class="col">
+            @m.Code_Medecin
+        </div>
+        <div class="col">
+            @m.Nom_Medecin
+        </div>
+        <div class="col">
+            @m.Tel_Medecin
+        </div>
+        <div class="col">
+            @m.SpecialiteMedecin
+        </div>
+        
+    </div>
+}

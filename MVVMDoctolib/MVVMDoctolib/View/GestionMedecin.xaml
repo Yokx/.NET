@@ -1,0 +1,60 @@
+﻿<Window x:Class="MVVMDoctolib.View.GestionMedecin"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVMDoctolib.View"
+        mc:Ignorable="d"
+        Title="GestionMedecin" Height="450" Width="1100" Loaded="OnLoad">
+    <StackPanel Orientation="Horizontal">
+        <GroupBox Header="Medecin" MinWidth="400">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Code: " MinWidth="80"></Label>
+                    <TextBox Text="{Binding CodeMedecin}" MinWidth="300"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Nom : " MinWidth="80"></Label>
+                    <TextBox Text="{Binding NomMedecin}" MinWidth="300"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Tel : " MinWidth="80"></Label>
+                    <TextBox Text="{Binding TelMedecin}" MinWidth="300"></TextBox>
+                    
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Date d'embauche : " MinWidth="80"></Label>
+                    <DatePicker DisplayDate="{Binding DateTime.Now}"  SelectedDate="{Binding DateEmbauche}" IsTodayHighlighted="False" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Specialite: " MinWidth="80"></Label>
+                    <ComboBox x:Name="comboBox1" SelectedItem="{Binding SpecialiteMedecin}" MinWidth="100"></ComboBox>
+                </StackPanel>
+                <Button Content="Ajouter" Command="{Binding AddCommand}"></Button>
+                <Button Content="Modifier" Command="{Binding ModifyCommand}"></Button>
+                <Button Content="Supprimer" Command="{Binding DeleteCommand}"></Button>
+                <Image Source="\Assets/doc.png" Height="200"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Liste Médecins" MinWidth="400">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Nom du Médecin" MinWidth="80"></Label>
+                    <TextBox Text="{Binding Search}" MinWidth="200"></TextBox>
+                    <Button Command="{Binding SearchCommand}" MinWidth="100" Content="Rechercher"></Button>
+                </StackPanel>
+                <ListView ItemsSource="{Binding Medecins}" SelectedItem="{Binding Medecin}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Code" Width="100" DisplayMemberBinding="{Binding CodeMedecin}"></GridViewColumn>
+                            <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding NomMedecin}"></GridViewColumn>
+                            <GridViewColumn Header="Téléphone" Width="150" DisplayMemberBinding="{Binding TelMedecin}"></GridViewColumn>
+                            <GridViewColumn Header="Date Embauche" Width="150" DisplayMemberBinding="{Binding DateEmbauche}"></GridViewColumn>
+                            <GridViewColumn Header="Specialité" Width="100" DisplayMemberBinding="{Binding SpecialiteMedecin}"></GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
+</Window>

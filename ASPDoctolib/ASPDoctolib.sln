@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPDoctolib", "ASPDoctolib\ASPDoctolib.csproj", "{FCDB1A35-F600-4A62-8409-FF199583FC5F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCDB1A35-F600-4A62-8409-FF199583FC5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCDB1A35-F600-4A62-8409-FF199583FC5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCDB1A35-F600-4A62-8409-FF199583FC5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCDB1A35-F600-4A62-8409-FF199583FC5F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5CD7EA6C-34FD-4BFB-B16E-9D6204E3CE59}
+	EndGlobalSection
+EndGlobal

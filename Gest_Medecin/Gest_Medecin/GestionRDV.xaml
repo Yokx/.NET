@@ -1,0 +1,39 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gest_Medecin"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="Gest_Medecin.GestionRDV"
+        mc:Ignorable="d"
+        Title="GestionRDV" Height="377" Width="683" Loaded="OnLoad">
+    <Grid HorizontalAlignment="Left" Width="757" Margin="0,0,0,18">
+        <Label Content="Gestion des Rendez-vous" HorizontalAlignment="Left" Height="38" Margin="211,10,0,0" VerticalAlignment="Top" Width="201" FontSize="16" Foreground="#FF1666C5"/>
+        <StackPanel HorizontalAlignment="Left" Height="113" Margin="26,48,0,0" VerticalAlignment="Top" Width="257" Background="#FFE3E8F0"/>
+        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Height="28" Margin="119,53,0,0" VerticalAlignment="Top" Width="117" SelectionChanged="ComboBox1_SelectionChanged"/>
+        <Label Content="Code Patient" HorizontalAlignment="Left" Height="28" Margin="32,53,0,0" VerticalAlignment="Top" Width="87"/>
+        <Label Content="Nom" HorizontalAlignment="Left" Height="25" Margin="32,86,0,0" VerticalAlignment="Top" Width="89"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="22" Margin="119,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"/>
+        <RadioButton x:Name="radioButton1" Content="H" HorizontalAlignment="Left" Margin="119,132,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radioButton2" Content="F" HorizontalAlignment="Left" Margin="164,132,0,0" VerticalAlignment="Top"/>
+        <StackPanel HorizontalAlignment="Left" Height="25" Margin="119,126,0,0" VerticalAlignment="Top" Width="87"/>
+        <Label Content="Sexe" HorizontalAlignment="Left" Height="25" Margin="32,126,0,0" VerticalAlignment="Top" Width="44"/>
+        <StackPanel HorizontalAlignment="Left" Height="113" Margin="365,48,0,0" VerticalAlignment="Top" Width="257" Background="#FFE3E8F0"/>
+        <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Height="28" Margin="469,53,0,0" VerticalAlignment="Top" Width="117" SelectionChanged="ComboBox2_SelectionChanged" />
+        <Label Content="Code Médecin" HorizontalAlignment="Left" Height="28" Margin="365,53,0,0" VerticalAlignment="Top" Width="87"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="22" Margin="469,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"/>
+        <Label Content="Nom" HorizontalAlignment="Left" Height="25" Margin="365,86,0,0" VerticalAlignment="Top" Width="89"/>
+        <Label Content="Specialite" HorizontalAlignment="Left" Height="25" Margin="365,122,0,0" VerticalAlignment="Top" Width="89"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="22" Margin="469,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"/>
+        <StackPanel HorizontalAlignment="Left" Height="113" Margin="26,183,0,0" VerticalAlignment="Top" Width="257" Background="#FFE3E8F0"/>
+        <Label Content="Date RDV" HorizontalAlignment="Left" Height="28" Margin="32,200,0,0" VerticalAlignment="Top" Width="87"/>
+        <Label Content="Heure RDV" HorizontalAlignment="Left" Height="28" Margin="32,245,0,0" VerticalAlignment="Top" Width="87"/>
+        <DatePicker x:Name="dateTimePicker1" HorizontalAlignment="Left" Height="28" Margin="110,200,0,0" VerticalAlignment="Top" Width="139"/>
+
+        <xctk:MaskedTextBox x:Name="maskedTextBox1" HorizontalAlignment="Left" Height="24" Margin="110,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" Mask="00-00"/>
+        <Button x:Name="buttonAjouter" Content="Ajouter" HorizontalAlignment="Left" Height="28" Margin="365,200,0,0" VerticalAlignment="Top" Width="257" Background="#FF0EA8F0" Foreground="#FFFFF4F4" Click="buttonAjouter_Click"/>
+        <Button x:Name="buttonNouveau" Content="Nouveau" HorizontalAlignment="Left" Height="28" Margin="365,245,0,0" VerticalAlignment="Top" Width="125" Background="#FF0EA8F0" Foreground="#FFF9F9F9" Click="buttonNouveau_Click"/>
+        <Button x:Name="buttonQuitter" Content="Quitter" HorizontalAlignment="Left" Height="28" Margin="505,245,0,0" VerticalAlignment="Top" Width="117" Background="#FFF59509" Click="buttonQuitter_Click"/>
+
+    </Grid>
+</Window>

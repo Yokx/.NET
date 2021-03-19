@@ -1,0 +1,22 @@
+﻿<Page x:Class="CompteBancaire.AfficherCompte"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CompteBancaire"
+        mc:Ignorable="d"
+             Title="AfficherCompte" Height="550" Width="500" Loaded="OnLoad">
+    <Grid Background="#FF7E7A7A">
+
+        <StackPanel>
+            <Image Source="Assets/close-outline.png" Height="29" Width="20" HorizontalAlignment="Right" />
+            <Label Content="Consulter Ses comptes" Foreground="#FFF7F5F2" Width="230" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="24"/>
+            <Label Content="Choisir le Compte" Foreground="#FFF3F312" FontSize="14" Width="120"/>
+            <ComboBox x:Name="comboComptes3" Width="100"/>
+            <Label Content="Solde" Foreground="#FFF3F312" FontSize="14" Width="50"/>
+            <TextBox x:Name="textBoxSolde" Width="100" Height="22" IsReadOnly="true"/>
+            <Label/>
+            <DataGrid x:Name="gridComptes" Height="150"/>
+        </StackPanel>
+    </Grid>
+</Page>

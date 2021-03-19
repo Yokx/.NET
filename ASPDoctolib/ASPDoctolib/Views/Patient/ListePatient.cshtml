@@ -1,0 +1,54 @@
+﻿@model List<Patient>
+@{
+    ViewData["Title"] = "Espace Patient";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Liste des Patients</h1>
+   
+</div>
+<h1>Liste des Patients</h1>
+
+<div class="row">
+    <div class="col">
+        Mail Patient
+    </div>
+    <div class="col">
+        Nom du Patient
+    </div>
+    <div class="col">
+        Tel du Patient
+    </div>
+    <div class="col">
+        Adresse du Patient
+    </div>
+    <div class="col">
+        Date de Naissance
+    </div>
+    <div class="col">
+        Sexe
+    </div>
+</div>
+@foreach (Patient p in Model)
+{
+<div class="row">
+    <div class="col">
+        @p.Mail_Patient
+    </div>
+    <div class="col">
+        @p.Nom_Patient
+    </div>
+    <div class="col">
+        @p.TelPortable_Patient
+    </div>
+    <div class="col">
+        @p.Adresse_Patient
+    </div>
+    <div class="col">
+        @p.DateNaissance
+    </div>
+    <div class="col">
+        @p.SexePatient
+    </div>
+</div>
+}

@@ -1,0 +1,60 @@
+﻿<Window x:Class="MVVMDoctolib.View.GestionPatient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVMDoctolib.View"
+        mc:Ignorable="d"
+        Title="GestionPatient" Height="450" Width="1100">
+    <StackPanel Orientation="Horizontal">
+        <GroupBox Header="Patient" MinWidth="400">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Code: " MinWidth="80"></Label>
+                    <TextBox Text="{Binding CodePatient}" MinWidth="300"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Nom : " MinWidth="80"></Label>
+                    <TextBox Text="{Binding NomPatient}" MinWidth="300"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Adresse : " MinWidth="80"></Label>
+                    <TextBox Text="{Binding AdressePatient}" MinWidth="300"></TextBox>
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Date Naissance : " MinWidth="80"></Label>
+                    <DatePicker DisplayDate="{Binding DateTime.Now}"  SelectedDate="{Binding DateNaissance}" IsTodayHighlighted="False" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Sexe : " MinWidth="80"></Label>
+                    <RadioButton x:Name="radMale" Content="H" IsChecked="{Binding isMale, Mode=TwoWay}"></RadioButton>
+                    <RadioButton x:Name="radFemale" Content="F" IsChecked="{Binding isFemale,Mode=TwoWay}"></RadioButton>
+                </StackPanel>
+                <Button Content="Ajouter" Command="{Binding AddCommand}"></Button>
+                <Button Content="Modifier" Command="{Binding ModifyCommand}"></Button>
+                <Button Content="Supprimer" Command="{Binding DeleteCommand}"></Button>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Liste Patients" MinWidth="400">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Nom du Patient" MinWidth="80"></Label>
+                    <TextBox Text="{Binding Search}" MinWidth="200"></TextBox>
+                    <Button Command="{Binding SearchCommand}" MinWidth="100" Content="Rechercher"></Button>
+                </StackPanel>
+                <ListView ItemsSource="{Binding Patients}" SelectedItem="{Binding Patient}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Code" Width="100" DisplayMemberBinding="{Binding CodePatient}"></GridViewColumn>
+                            <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding NomPatient}"></GridViewColumn>
+                            <GridViewColumn Header="Adresse" Width="150" DisplayMemberBinding="{Binding AdressePatient}"></GridViewColumn>
+                            <GridViewColumn Header="Date Naissance" Width="150" DisplayMemberBinding="{Binding DateNaissance}"></GridViewColumn>
+                            <GridViewColumn Header="Sexe" Width="100" DisplayMemberBinding="{Binding SexePatient}"></GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
+</Window>

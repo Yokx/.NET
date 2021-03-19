@@ -1,0 +1,113 @@
+﻿<Window x:Class="MVVMDoctolib.View.GestionRDV"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVMDoctolib.View"
+        mc:Ignorable="d"
+        Title="GestionRDV" Height="800" Width="800">
+    <Grid>
+        <GroupBox Header="Medecin" Width="330" Height="200" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="#FF0973F1">
+            <StackPanel>
+                <ListView ItemsSource="{Binding Medecins}" SelectedItem="{Binding Medecin}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Code" Width="100" DisplayMemberBinding="{Binding CodeMedecin}"></GridViewColumn>
+                            <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding NomMedecin}"></GridViewColumn>
+                            <GridViewColumn Header="Specialité" Width="100" DisplayMemberBinding="{Binding SpecialiteMedecin}"></GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox>
+            <Image Source="\Assets/rdv.png" Height="100" Width="140" VerticalAlignment="Top"/>
+        </GroupBox>
+        
+        <GroupBox Header="Patient" Width="330" Height="200" VerticalAlignment="Top" HorizontalAlignment="Right" Foreground="#FF007DF9">
+
+            <StackPanel>
+                <ListView ItemsSource="{Binding Patients}" SelectedItem="{Binding Patient}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Code" Width="100" DisplayMemberBinding="{Binding CodePatient}"></GridViewColumn>
+                            <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding NomPatient}"></GridViewColumn>
+                            <GridViewColumn Header="Sexe" Width="100" DisplayMemberBinding="{Binding SexePatient}"></GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Infos Rendez-vous" Width="430" VerticalAlignment="Top" Margin="185,200,185,0" Foreground="#FF0B6CF7">
+
+            <StackPanel>
+                <Label Foreground="#FFF91616">Infos Medecin</Label>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Code Medecin: " Width="90"></Label>
+                    <TextBox Text="{Binding CodeMedecin}" Width="100"></TextBox>
+                    <Label Content="Nom Medecin : " MinWidth="80"></Label>
+                    <TextBox Text="{Binding NomMedecin}" MinWidth="100"></TextBox>
+                </StackPanel>
+
+                <Label Foreground="#FFFD0909">Infos Patient</Label>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Code Patient: " MinWidth="90"></Label>
+                    <TextBox Text="{Binding CodePatient}" MinWidth="100"></TextBox>
+                    <Label Content="Nom Patient : " MinWidth="95"></Label>
+                    <TextBox Text="{Binding NomPatient}" MinWidth="100"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+
+                </StackPanel>
+                <Label Background="#FFFDFDFD" Foreground="#FFFB1313">Rendez-vous :</Label>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Date du Rendez-vous : " MinWidth="80"></Label>
+                    <DatePicker DisplayDate="{Binding DateTime.Now}" SelectedDate="{Binding DateRDV}" IsTodayHighlighted="False"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Heure du Rendez-vous : " MinWidth="80"></Label>
+                    <TextBox Text="{Binding HeureRDV}" MinWidth="100"></TextBox>
+                </StackPanel>
+                <StackPanel>
+                    <Button Content="Valider le Rendez-vous" Command="{Binding AddCommand}" Height="30" Width="200" HorizontalAlignment="Center" Background="#FF51AAE8" Foreground="#FFF5F0F0"/>
+                </StackPanel>
+
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Liste des RDV" Width="600" VerticalAlignment="Top" Margin="100,435,100,0" Foreground="#FF0476FF">
+            <StackPanel>
+
+                <ListView ItemsSource="{Binding Rdvs}" SelectedItem="{Binding Rdv}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Numero RDV" Width="100" DisplayMemberBinding="{Binding NumeroRDV}"></GridViewColumn>
+                            <GridViewColumn Header="Date" Width="100" DisplayMemberBinding="{Binding DateRDV,StringFormat='dd-MM-yyyy'}"></GridViewColumn>
+                            <GridViewColumn Header="Heure" Width="150" DisplayMemberBinding="{Binding HeureRDV}"></GridViewColumn>
+                            <GridViewColumn Header="Medecin" Width="150" DisplayMemberBinding="{Binding CodeMedecin}"></GridViewColumn>
+                            <GridViewColumn Header="Patient" Width="100" DisplayMemberBinding="{Binding CodePatient}"></GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Code du Patient" MinWidth="80"></Label>
+                    <TextBox Text="{Binding PatientSearch}" MinWidth="200"></TextBox>
+                    <Button Command="{Binding SearchPerPatientCommand}" MinWidth="100" Content="Rechercher"></Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Date" MinWidth="80"></Label>
+                    <DatePicker DisplayDate="{Binding DateTime.Now}" SelectedDate="{Binding DateSearch}" IsTodayHighlighted="False"/>
+                    <Button Command="{Binding SearchPerDateCommand}" MinWidth="100" Content="Rechercher"></Button>
+                </StackPanel>
+                <StackPanel>
+                    <Button Content="Modifier le Rendez-vous" Command="{Binding ModifyCommand}" Height="30" Width="200" HorizontalAlignment="Center" Background="#FFF78F37"></Button>
+                    <Button Content="Supprimer le Rendez-vous" Command="{Binding DeleteCommand}" Height="30" Width="200" Background="#FFF58F28"/>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+
+
+    </Grid>
+
+
+</Window>

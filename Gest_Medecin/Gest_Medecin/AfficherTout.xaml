@@ -1,0 +1,21 @@
+﻿<Window x:Class="Gest_Medecin.AfficherTout"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gest_Medecin"
+        mc:Ignorable="d"
+        Title="AfficherTout" Height="450" Width="800">
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Height="31" Margin="56,29,0,0" VerticalAlignment="Top" Width="659" Background="#FFF7B362">
+            <Label Content="Choix :" HorizontalAlignment="Left" Height="27" Margin="10,0,0,0" Width="106" FontSize="14" Foreground="#FF098BF7" FontWeight="Bold"/>
+        </StackPanel>
+        <RadioButton x:Name="radButMedecins" Content="Tous les Médecins" HorizontalAlignment="Left" Margin="177,37,0,0" VerticalAlignment="Top" Checked="radButMedecins_Checked"/>
+        <RadioButton x:Name="radButPatients" Content="Tous les Patients" HorizontalAlignment="Left" Margin="372,37,0,0" VerticalAlignment="Top" Checked="radButPatients_Checked"/>
+        <RadioButton x:Name="radButRDV" Content="Tous les RDV" HorizontalAlignment="Left" Margin="579,37,0,0" VerticalAlignment="Top" Checked="radButRDV_Checked"/>
+        <DataGrid x:Name="dataGrid"  HorizontalAlignment="Left" Height="306" Margin="56,72,0,0" VerticalAlignment="Top" Width="659" />
+
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ASPDoctolib</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+    <script src="assets/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="jumbotron jumbotron-fluid" style="color:aliceblue;background-color:black;margin-bottom:0">
+            <div class="container">
+                <h1 class="display-4">Fake Doctolib</h1>
+                <p class="lead">Un pépin? Un Médecin !</p>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Doctolib</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Particuliers?
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" asp-area="" asp-controller="Patient" asp-action="ListePatient">Liste des Patients</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Patient" asp-action="InscriptionPatient">S'inscrire</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Patient" asp-action="LoginPatient">Gerer mes RDV</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Professionel de santé?
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" asp-area="" asp-controller="Medecin" asp-action="ListeMedecin">Liste des Médecins</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Medecin" asp-action="InscriptionMedecin">S'inscrire</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Medecin" asp-action="LoginMedecin">Se connecter</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Prendre Rendez-vous
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" asp-area="" asp-controller="RDV" asp-action="ListeRDV">Liste des RDV</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="RDV" asp-action="AjouterRDV">Ajouter un RDV</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="RDV" asp-action="AjouterRDV">Modifier/Supprimer un RDV</a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Rechercher un Praticien...">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - ASPDoctolib - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

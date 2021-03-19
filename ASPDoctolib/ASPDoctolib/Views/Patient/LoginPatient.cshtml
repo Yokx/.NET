@@ -1,0 +1,56 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            
+        </div>
+        <div class="col-sm">
+            <form asp-action="SubmitLoginPatient" asp-controller="Patient" method="post" class="container">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Connexion</h5>
+
+                        <p class="card-text">
+                            <label for="inputEmail4">Email</label>
+                            <input type="email" class="form-control" name="inputEmail4" id="inputEmail4" placeholder="Email">
+                        </p>
+                        <p class="card-text">
+                            <label for="inputPassword4">Mot de passe</label>
+                            <input type="password" class="form-control" name="inputPassword4" id="inputPassword4" placeholder="Password">
+                        </p>
+                        <button class="btn btn-primary">Se connecter</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm">
+           
+        </div>
+    </div>
+</div>
+
+    @*<form asp-action="SubmitLoginPatient" asp-controller="Patient" method="post" class="container">
+        @if (ViewBag.MessageError != null)
+        {
+            <div class="row m-1">
+                <div class="alert-danger col p-1">
+                    @ViewBag.MessageError
+                </div>
+            </div>
+        }
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" name="inputEmail4" id="inputEmail4" placeholder="Email">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Mot de passe</label>
+                <input type="password" class="form-control" name="inputPassword4" id="inputPassword4" placeholder="Password">
+            </div>
+        </div>
+        <button class="btn btn-primary">Se connecter</button>
+    </form>*@

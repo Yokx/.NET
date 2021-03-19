@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<form asp-action="SubmitFormMedecin" asp-controller="Medecin" method="post" class="container">
+    @if (ViewBag.MessageError != null)
+    {
+        <div class="row m-1">
+            <div class="alert-danger col p-1">
+                @ViewBag.MessageError
+            </div>
+        </div>
+    }
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputCode14">Code Medecin</label>
+            <input type="text" class="form-control" name="inputCode14" id="inputCode14" placeholder="Entrez votre code soignant...">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputPassword4">Mot de passe</label>
+            <input type="password" class="form-control" name="inputPassword4" id="inputPassword4" placeholder="Password">
+        </div>
+    </div>
+    <fieldset class="form-group">
+        <div class="form-group col-md-6">
+            <label for="inputName">Nom</label>
+            <input type="text" class="form-control" name="inputName" id="inputName" placeholder="Nom...">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputTel">Tel :</label>
+            <input type="text" class="form-control" name="inputTel" id="inputTel" placeholder="Téléphone...">
+        </div>
+
+    </fieldset>
+    <div class="form-group col-md-4">
+        <label for="inputSpec">Specialite</label>
+        <select name="inputSpec" id="inputSpec" class="form-control">
+            <option selected>Choisir...</option>
+            <option>Cardiologie</option>
+            <option>Chirurgie</option>
+            <option>Dermatologie</option>
+            <option>Geriatrie</option>
+            <option>Oncologie</option>
+            <option>Pediatrie</option>
+            <option>Psychiatrie</option>
+            <option>Allergologie</option>
+        </select>
+    </div>
+
+
+    <button class="btn btn-primary">S'inscrire</button>
+</form>
